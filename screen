@@ -1,0 +1,66 @@
+<DOCTYPE hmtl>
+<html>
+<head>
+	<title>screen</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+	  html body {
+	  	margin: 0;
+	  	padding: 0;
+	  	height: 100%;
+	  }
+	    /* 普通屏幕下 */
+	  .parent {
+	  	width: 960px;
+	  	height: 100%;
+	  	margin: 0 auto;
+	  }
+	  .side {
+	  	float: left;
+	  	width: 300px;
+	  	height: 100%;
+	  	margin-right: 10px;
+	  	background-color: blue;
+	  }
+	  .main {
+	  	width: 650px;
+	  	height: 100%;
+	  	overflow: hidden;
+	  	background-color: pink;
+	  }
+	    /* 针对400-1000宽的屏幕 */
+	  @media screen and (min-width: 400px) and (max-width: 1000px) {
+	  	.parent {
+	  	  width: 100%;
+	  	}
+	  	.main { 
+	  	  width: auto;
+	  	}
+	  }
+	  	 /* 针对==<400的 */
+	  @media screen and (max-width: 400px) {
+	   	.parent{
+            width: 100%;
+        }
+	  	.side {
+	  	  float: none;
+	  	  width: auto;
+	  	  width: 100%;
+	  	  margin-right: 0;
+	  	  margin-bottom: 10px;
+	  	  height: auto;
+	  	}
+	  	.main{
+            width:100%;
+            height:auto;
+        }
+	  }
+	</style>
+</head>
+<body>
+  <div class="parent">
+	<div class="side">side内容</br>side内容</div>
+    <div class="main">main内容</br>main内容</br>main内容</div>
+  </div>
+</body>
+</html>
